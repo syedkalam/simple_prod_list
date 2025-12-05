@@ -3,7 +3,7 @@ import { fetchProductsApi } from "../api/productApi";
 
 export const useProducts = () => {
   return useInfiniteQuery({
-    queryKey: ["products"],
+    queryKey: ["products", "productsBycategory"],
     queryFn: ({ pageParam = 0 }) => fetchProductsApi(pageParam),
     initialPageParam: 0,
 

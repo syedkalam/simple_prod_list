@@ -35,6 +35,10 @@ export default function ProductListScreen() {
 
   const allowInfiniteScroll = debouncedSearch.length === 0;
 
+  const handleClick = (id: any) => {
+    console.log("Product clicked with id:", id);
+  };
+
   useEffect(() => {
     if (search.length > 0) {
       setSearchLoading(true);
@@ -74,6 +78,7 @@ export default function ProductListScreen() {
           refreshing={isRefetching}
           onRefresh={refetch}
           searchLoading={searchLoading}
+          handleClick={handleClick}
         />
       )}
     </View>
